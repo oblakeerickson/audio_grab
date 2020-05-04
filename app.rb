@@ -8,7 +8,8 @@ begin
   audio_grab = AudioGrab.new
   audio_grab.download_and_convert_video(url)
   file = audio_grab.mp3_file
-  audio_grab.upload_to_overcast(file)
+  #audio_grab.upload_to_overcast(file)
+  audio_grab.upload_to_dropbox(file)
   audio_grab.move_to_uploaded(file)
 rescue Exception => e
   puts e.message

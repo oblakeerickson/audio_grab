@@ -36,6 +36,12 @@ class AudioGrab
     end.submit
   end
 
+  def upload_to_dropbox(file)
+    puts "uploading to dropbox..."
+    puts file
+    puts `dropbox_uploader.sh upload #{file} #{File.basename(file)}`
+  end
+
   def move_to_uploaded(file)
     FileUtils.mv(file, "uploaded/#{File.basename(file)}")
   end
